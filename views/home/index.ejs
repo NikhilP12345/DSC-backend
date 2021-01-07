@@ -1,0 +1,280 @@
+<% include ../partials/header %>
+<div class="full-page-content">
+    <div class="page-blocks home-page-blocks">
+
+        <section class="full-page-section first-screen-page j-scrollify-section">
+            <div class="home-main__wrapper">
+                <video autoplay muted loop class="home-main__video">
+                    <source src="wp-content/themes/wfn/circle.mp4" type="video/mp4">
+                    <source src="wp-content/themes/wfn/circle.ogv" type="video/ogv">
+                    <source src="wp-content/themes/wfn/circle.webm" type="video/webm">
+                </video>
+                <a class="home-main__arrow j-anchor" href="#design">
+                    <span class="home-main__arrow-text">Start</span>
+                    <svg class="home-main__arrow-icon">
+                        <use xlink:href="#icon-arrow-pagination"></use>
+                    </svg>
+                </a>
+                <div class="home-main__title-wrapper">
+                    <div class="home-main__tagline-wrapper">
+                        <span class="home-main__tagline-line"></span>
+                        <!--
+                        <h5 class="home-main__tagline">Powered by <span style="color: #4285F4">g</span><span style="color: #EA4335">o</span><span style="color: #FBBC05">o</span><span style="color: #4285F4">g</span><span style="color: #34A853">l</span><span style="color: #EA4335">e</span></h5>-->
+                    </div>
+                    <h1 class="home-main__title"><span class="title-line first"></span><br><span class="title-line second"><span class=accent></span><span class="title-line second"></span></span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+        <section class="full-page-section j-scrollify-section" id="design">
+            <div class="page-title-container m-narrow">
+                <h1 class="page-title">
+                    <span class="page-title active shaded" data-aos="title-active-animation" data-aos-duration="1300">Upcoming</span>
+                    <span class="page-title separator"></span>
+                    <a class="page-title inactive shaded j-anchor" href="#development" data-aos="title-inactive-animation" data-aos-duration="700">Events</a>
+                </h1>
+            </div>
+            <div class="full-page-section-content-container u-bg-white">
+                <div data-tab-id="1" class="full-page-section-content-two-cols services-list-wrap j-slider-tabs j-tab-content">
+                    <div class="full-page-section-content-call-content j-slider services__items">
+                        <% snapshot.forEach(function(doc)  { %>
+                        <div class="services__details" data-aos="fade-up" data-aos-duration="1000">
+                            <a class="services__link-wrap" href="/home/<%= doc.data().event_name%>">
+                                <img class="services__logo" src="<%= doc.data().image%>" alt="HACK-DAY" title="HACK-FEST">
+                                <h4 class="services__title" data-mh="service-title-1"><%= doc.data().event_name %></h4>
+                                <p class="services__description"><%= doc.data().event_small %></p>
+                                <span class="link-more">
+                                            <span class="link-more-text">Register here</span>
+                                <svg class="link-more-arrow">
+                                                <use xlink:href="#icon-arrow-on-link"></use>
+                                            </svg>
+                                </span>
+                                <span class="services__index">01</span>
+                            </a>
+                        </div>
+                        <% }) %>
+                    </div>
+                    <div class="full-page-section-content-call-link" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
+                        <a class="view-all u-desktop-only" href="/home/events">
+                            <svg class="view-all__icon">
+                                <use xlink:href="#icon-arrow-pagination"></use>
+                            </svg>
+                            <span class="view-all__text">All</span>
+                        </a>
+                        <a class="btn u-mobile-only" href="/home/events">All Events <svg>
+                                <use xlink:href="#icon-arrow-on-btn"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--
+        <section id="development" class="full-page-section j-scrollify-section" id="development">
+            <div class="page-title-container">
+                <h1 class="page-title">
+                    <a class="page-title inactive j-anchor" href="#design" data-aos="title-inactive-animation" data-aos-duration="500">Design</a>
+                    <span class="page-title separator" data-aos="title-separator-animation" data-aos-duration="500" data-aos-delay="100">&</span>
+                    <span class="page-title" data-aos="title-active-animation" data-aos-duration="500">Development</span>
+                </h1>
+            </div>
+            <div class="full-page-section-content-container u-bg-white">
+                <div data-tab-id="1" class="full-page-section-content-two-cols services-list-wrap j-slider-tabs j-tab-content">
+                    <div class="full-page-section-content-call-content j-slider services__items">
+
+                        <div class="services__details" data-aos="fade-up" data-aos-duration="1000">
+                            <a class="services__link-wrap" href="services/web-development/index.html">
+                                <img class="services__logo" src="wp-content/uploads/2018/10/services-icon-websites.svg" alt="Web Development Services" title="">
+                                <h4 class="services__title" data-mh="service-title-1">Web Development</h4>
+                                <p class="services__description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                                <span class="link-more">
+<span class="link-more-text">more</span>
+                                <svg class="link-more-arrow"><use xlink:href="#icon-arrow-on-link"></use></svg>
+                                </span>
+                                <span class="services__index">01</span>
+                            </a>
+                        </div>
+                        <div class="services__details" data-aos="fade-up" data-aos-duration="1000">
+                            <a class="services__link-wrap" href="services/e-commerce/index.html">
+                                <img class="services__logo" src="wp-content/uploads/2018/10/services-icon-ecommerce.svg" alt="E-commerce Services" title="">
+                                <h4 class="services__title" data-mh="service-title-1">E-commerce</h4>
+                                <p class="services__description">Whether you’re only starting out or selling hundreds of items, we provide a reliable e-commerce solution that’s scalable, secure, and functional. </p>
+                                <span class="link-more">
+<span class="link-more-text">more</span>
+                                <svg class="link-more-arrow"><use xlink:href="#icon-arrow-on-link"></use></svg>
+                                </span>
+                                <span class="services__index">02</span>
+                            </a>
+                        </div>
+                        <div class="services__details" data-aos="fade-up" data-aos-duration="1000">
+                            <a class="services__link-wrap" href="services/web-applications/index.html">
+                                <img class="services__logo" src="wp-content/uploads/2018/10/services-icon-apps.svg" alt="Web Application Services" title="">
+                                <h4 class="services__title" data-mh="service-title-1">Web Applications</h4>
+                                <p class="services__description">If you have an MVP that needs to be enhanced, or just an idea that needs to be developed from scratch, we can help guide you in the right direction.</p>
+                                <span class="link-more">
+<span class="link-more-text">more</span>
+                                <svg class="link-more-arrow"><use xlink:href="#icon-arrow-on-link"></use></svg>
+                                </span>
+                                <span class="services__index">03</span>
+                            </a>
+                        </div>
+                        <div class="services__details" data-aos="fade-up" data-aos-duration="1000">
+                            <a class="services__link-wrap" href="services/tech-consultancy/index.html">
+                                <img class="services__logo" src="wp-content/uploads/2018/10/tech-consultancy-icon.svg" alt="Tech Consultancy Services" title="Tech Consultancy Services">
+                                <h4 class="services__title" data-mh="service-title-1">Tech Consultancy</h4>
+                                <p class="services__description">WFN is able to consult your business from many strategic angles to help it grow and thrive in the digital space.</p>
+                                <span class="link-more">
+<span class="link-more-text">more</span>
+                                <svg class="link-more-arrow"><use xlink:href="#icon-arrow-on-link"></use></svg>
+                                </span>
+                                <span class="services__index">04</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="full-page-section-content-call-link" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="800">
+                        <a class="view-all u-desktop-only" href="services/index.html">
+                            <svg class="view-all__icon"><use xlink:href="#icon-arrow-pagination"></use></svg>
+                            <span class="view-all__text">All</span>
+                        </a>
+                        <a class="btn u-mobile-only" href="services/index.html" data-aos="fade-right" data-aos-duration="100" data-aos-delay="800">All services                        <svg><use xlink:href="#icon-arrow-on-btn"></use></svg>
+        </a>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <section class="full-page-section works-page-section j-scrollify-section">
+            <div class="page-title-container u-non-clickable">
+                <h1 class="page-title u-non-clickable" data-aos="title-animation" data-aos-duration="1000">
+                    Our Blog</h1>
+            </div>
+            <div class="full-page-section-content-container full-page-section-our-works u-bg-white">
+                <div class="full-page-section-content-two-cols works-content">
+                    <div class="full-page-section-content-call-content works-content">
+                        <div class="j-slider works-slider">
+                            <div class="works-slide">
+
+                                <div class="works-slide__content" data-aos="fade-up" data-aos-duration="1000">
+                                    <h4 class="works-slide__title">
+                                        <p class="works-slide__number">01</p>Code IT
+                                    </h4>
+                                    <p class="works-slide__tagline">
+                                        <!--content-->
+                                    </p>
+                                    <a class="works-slide__link">
+                                        <span class="works-slide__link-text">Coming soon <svg
+                                                class="works-slide__link-icon">
+                                                <use xlink:href="#icon-arrow-on-btn"></use>
+                                            </svg></span>
+                                        <img class="works-slide__img" src="wp-content/uploads/2018/10/code-it.jpg">
+                                    </a>
+                                </div>
+
+                                <div class="works-slide__content" data-aos="fade-up" data-aos-duration="1000">
+                                    <h4 class="works-slide__title">
+                                        <p class="works-slide__number">02</p>Team Management
+                                    </h4>
+                                    <p class="works-slide__tagline">
+                                        <!--content-->
+                                    </p>
+                                    <a class="works-slide__link">
+                                        <span class="works-slide__link-text">Coming soon <svg
+                                                class="works-slide__link-icon">
+                                                <use xlink:href="#icon-arrow-on-btn"></use>
+                                            </svg></span>
+                                        <img class="works-slide__img" src="wp-content/uploads/2018/10/management.jpg">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="works-slide">
+
+                                <div class="works-slide__content" data-aos="fade-up" data-aos-duration="1000">
+                                    <h4 class="works-slide__title">
+                                        <p class="works-slide__number">03</p> Web Development
+                                    </h4>
+                                    <p class="works-slide__tagline">
+                                        <!--content-->
+                                    </p>
+                                    <a class="works-slide__link">
+                                        <span class="works-slide__link-text ">Coming soon <svg
+                                                class="works-slide__link-icon ">
+                                                <use xlink:href="#icon-arrow-on-btn "></use>
+                                            </svg></span>
+                                        <img class="works-slide__img " src="wp-content/uploads/2018/10/web-development.jpg ">
+                                    </a>
+                                </div>
+
+                                <div class="works-slide__content " data-aos="fade-up " data-aos-duration="1000 ">
+                                    <h4 class="works-slide__title ">
+                                        <p class="works-slide__number ">04</p>Tech Consultancy
+                                    </h4>
+                                    <p class="works-slide__tagline ">
+                                        <!--content-->
+                                    </p>
+                                    <a class="works-slide__link ">
+                                        <span class="works-slide__link-text ">Coming soon <svg
+                                                class="works-slide__link-icon ">
+                                                <use xlink:href="#icon-arrow-on-btn "></use>
+                                            </svg></span>
+                                        <img class="works-slide__img " src="wp-content/uploads/2018/10/team-management.jpg ">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="full-page-section-content-call-link " data-aos="fade-right " data-aos-duration="1000 " data-aos-delay="500 ">
+                        <a class="view-all u-desktop-only " href="/home/blog">
+                            <svg class="view-all__icon ">
+                                <use xlink:href="#icon-arrow-pagination "></use>
+                            </svg>
+                            <span class="view-all__text ">All</span>
+                        </a>
+                        <a class="btn u-mobile-only " href="/home/blog">All blogs<svg>
+                                <use xlink:href="#icon-arrow-on-btn "></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="full-page-section m-with-footer j-scrollify-section ">
+            <div class="page-title-container ">
+                <h1 class="page-title " data-aos="title-animation " data-aos-duration="1000 ">Our Android App
+                </h1>
+            </div>
+            <div class="about-wrapper ">
+                <div class=" about-slider ">
+                    <div class="about-slider__slide ">
+                        <div class="about-slider__img-wrapper ">
+                            <!--  <img class="about-slider__img " data-aos="fade " data-aos-duration="900 " data-aos-delay="300 " src="wp-content/uploads/2018/10/smartphone.svg " srcset=" wp-content/uploads/2018/10/smartphone.svg 630w, wp-content/uploads/2018/10/smartphone.svg
+                                        257w, wp-content/uploads/2018/10/smartphone.svg 257w, wp-content/uploads/2018/10/smartphone.svg 630w, , wp-content/uploads/2018/10/smartphone.svg 630w, wp-content/uploads/2018/10/smartphone.svg 257w, , wp-content/uploads/2018/10/smartphone.svg
+                                        630w, wp-content/uploads/2018/10/smartphone.svg 257w, " title="Android App / developer ">-->
+                        </div>
+                        <blockquote class="about-slider__blockquote blockquote ">
+                            <p class="about-slider__blockquote-text blockquote-text " data-aos="fade-down " data-aos-duration="1100 " data-aos-delay="700 ">"Technology is best when it brings people together "
+                            </p>
+                            <p class="about-slider__blockquote-author blockquote-author " data-aos="fade-down " data-aos-duration="1100 " data-aos-delay="500 "> -MATT MULLENWEG
+                            </p>
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="about-info ">
+                    <h4 class="about-info__heading page-info-heading ">Not on our android app??</h4>
+                    <p class="about-info__text page-info-text "></p>
+                    <a class="btn about-info__link " href="# ">Coming soon..!!!<svg
+                            class="about-info__link-icon ">
+                            <use xlink:href="#icon-arrow-on-btn "></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+</div>
+
+
+
+<% include ../partials/footer %>

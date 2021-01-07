@@ -1,0 +1,27 @@
+{
+  "name": "dsc_prateek",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "prateek",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "firebase": "^7.2.2",
+    "firebase-admin": "^8.6.0",
+    "firebase-functions": "^3.2.0",
+    "firebaseui": "^4.2.0",
+    "googleapis": "^39.2.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
